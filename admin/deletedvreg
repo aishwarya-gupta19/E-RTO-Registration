@@ -1,0 +1,18 @@
+<?php
+$mysqli= new mysqli("localhost","root","","rto") or die('error');
+
+//getting id of the data from url
+
+	//echo 'success';
+ $id= $_GET['chassis_no'];
+
+ $result=$mysqli->query("DELETE FROM vregister WHERE chassis_no = '$id' " ) or die(mysqli_error($mysqli));
+  if($result)
+  {
+	header("location:viewvreg.php");
+  }
+  else{
+	echo 'fail';
+  }
+?>
+
